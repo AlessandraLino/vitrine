@@ -1,0 +1,41 @@
+<div class="container main-container">
+    <div class="row" text-center>
+
+        <div *ngFor="let produto of produtos" class="col-md-4 " style="padding-bottom: 30px;">
+            <div class="card h-100 text-center">
+
+             
+
+                <div class="card-header text-center" >
+                    {{produto.nome}}
+
+                
+                </div>
+
+                <div class="card-body">
+
+                    <img src="{{produto.imagem}}">
+
+                
+                <br>
+                    R$ {{produto.valor}}
+                    <br>
+                    <a class="text-decoration-none" [routerLink]="['/produto-detalhe', produto.id]"> Detalhes </a>
+                   
+
+                </div>
+
+                <div class="card-footer">
+
+                    <a href="#" class="btn btn-primary"> Comprar </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</div>
