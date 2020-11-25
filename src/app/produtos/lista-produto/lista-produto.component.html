@@ -7,7 +7,7 @@
              
 
                 <div class="card-header text-center" >
-                    {{produto.nome}}
+                    {{produto.nome | titlecase}}
 
                 
                 </div>
@@ -18,7 +18,7 @@
 
                 
                 <br>
-                    R$ {{produto.valor}}
+                    {{produto.valor | currency:'BRL':'symbol':'1.2-2':'pt'}}
                     <br>
                     <a class="text-decoration-none" [routerLink]="['/produto-detalhe', produto.id]"> Detalhes </a>
                    
