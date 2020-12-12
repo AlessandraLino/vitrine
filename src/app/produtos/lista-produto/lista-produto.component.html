@@ -12,23 +12,29 @@
                 
                 </div>
 
+
                 <div class="card-body">
 
                     <img src="{{produto.imagem}}">
 
                 
                 <br>
-                    {{produto.valor | currency:'BRL':'symbol':'1.2-2':'pt'}}
-                    <br>
                     <a class="text-decoration-none" [routerLink]="['/produto-detalhe', produto.id]"> Detalhes </a>
                    
 
                 </div>
 
-                <div class="card-footer">
-
+                <div *ngIf="produto.promocao" class="card-footer">
+                    De: <small> <del> {{produto.valor | currency:'BRL':'symbol':'1.2-2':'pt'}}    </del> </small>
+                      Por: {{produto.valorPromo | currency:'BRL':'symbol':'1.2-2':'pt'}} 
+                    <br> <br>
                     <a href="#" class="btn btn-primary"> Comprar </a>
+                </div>
 
+                <div *ngIf="!produto.promocao" class="card-footer">
+                     {{produto.valorPromo | currency:'BRL':'symbol':'1.2-2':'pt'}} 
+                    <br> <br>
+                    <a href="#" class="btn btn-primary"> Comprar </a>
                 </div>
 
             </div>
